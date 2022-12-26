@@ -6,30 +6,28 @@ public class Main {
 		Player p1 = new Player("swang");
 		Player p2 = new Player("jgim");
 
-		p1.jump();
-		p2.jump();
-		p1.setLevel(2);
-		p2.setLevel(3);
-		p1.jump();
-		p2.jump();
-		p1.setLevel(1);
-		p2.setLevel(2);
-
-		System.out.println("----------------------");
+		System.out.println("---------play--------");
+		p1.play();
+		p2.play();
+		System.out.println("\n");
+		System.out.println("-----level up test-----");
+		p1.upgradeLevel(p1.getLevel().go(2));
+		p2.upgradeLevel(p2.getLevel().go(3));
+		System.out.println("\n");
+		System.out.println("--------play---------");
+		p1.play();
+		p2.play();
+		System.out.println("\n");
 		
+		System.out.println("-----Singleton test----");
 		Player p3 = new Player("java");
-
-		p3.jump();
-		p3.setLevel(2);
-		p3.jump();
-		if (p3.getLevelInstance().equals(p1.getLevelInstance()))
-			System.out.println("====> Level Advance instance equal");
-		System.out.println("----------------------");
+		p3.upgradeLevel(p3.getLevel().go(2));
+		if (p3.getLevel().equals(p1.getLevel()))
+		System.out.println("====> swang's Level (Advance) instance equal");
+		System.out.println("\n");
 		
-		p3.setLevel(3);
-		p3.jump();
-		if (p3.getLevelInstance().equals(p2.getLevelInstance()))
-			System.out.println("====> Level Super instance equal");
-		System.out.println("----------------------");
+		p3.upgradeLevel(p3.getLevel().go(3));
+		if (p3.getLevel().equals(p2.getLevel()))
+		System.out.println("====> jgim's Level (Super) instance equal");
 	}
 }
