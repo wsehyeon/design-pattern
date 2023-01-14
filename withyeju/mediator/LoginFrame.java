@@ -1,3 +1,5 @@
+package withyeju.mediator;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -9,6 +11,11 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
   private ColleagueButton buttonOk;
   private ColleagueButton buttonCancel;
   
+  public static void main(String[] argv) {
+    Frame f = new LoginFrame("why...");
+
+  }
+ 
   // Colleague들을 생성해서 배치한 후에 표시를 실행한다. 
   public LoginFrame(String title) {
     super(title); 

@@ -1,4 +1,4 @@
-
+package withyeju.mediator;
 import java.awt.*;
 
 public class ColleagueButton extends Button implements Colleague {
