@@ -1,4 +1,5 @@
-package withyeju.mediator;
+import java.awt.*;
+import java.awt.event.*;
 
 public class LoginFrame extends Frame implements ActionListener, Mediator {
   private ColleagueCheckbox checkGuest;
@@ -13,7 +14,8 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     super(title); 
     setBackground(Color.lightGray);
     // 레이아웃 매니저를 사용해서 4*2의 그리드를 만든다. 
-    setLayout(new GridLayout(4, 2));
+    setLayout(new
+     GridLayout(4, 2));
     // Colleague들의 생성
     createColleagues();
     // 배치
@@ -21,14 +23,17 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     add(checkLogin);
     add(new Label("Username:")); add(textUser);
     add(new Label("Password:")); add(textPass);
-    add(buttonOk);
+    add(buttonOk); 
     add(buttonCancel);
     // 유효/무효의 초기지정 
     colleagueChanged(checkGuest);
     // 표시
     pack();
-    show();
+    setVisible(getFocusTraversalKeysEnabled());
+    // show();
   }
+
+  @Override
   public void createColleagues() {
     // 생성
     CheckboxGroup g = new CheckboxGroup();
